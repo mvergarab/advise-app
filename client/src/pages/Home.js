@@ -1,6 +1,18 @@
+import {StyledTitle, StyledSubTitle} from "./../components/Styles";
+
 const Home = () => {
   return (
-    <p>Home</p>
+    <div>
+       <div>
+
+       </div>
+       <StyledTitle size={65}>
+         Welcome to Advise
+       </StyledTitle>
+       <StyledSubTitle size={27}>
+         Value your time
+       </StyledSubTitle>
+    </div>
   );
 }
 

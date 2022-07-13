@@ -21,3 +21,19 @@ export const StyledContainer = styled.div`
   background-size: cover;
   background-attachment: fixed;
 `;
+
+export const StyledTitle = styled.h2`
+  font-size: ${(props) => props.size}px;
+  text-align: center;
+  color:${(props) => props.color ? props.color : colors.primary } ;
+  padding: 5px;
+  margin-bottom: 20px;
+`;
+
+export const StyledSubTitle = styled.p`
+  font-size: ${(props) => props.size}px;
+  text-align: center;
+  color:${(props) => props.color ? props.color : colors.primary } ;
+  padding: 5px;
+  margin-bottom: 25px;
+`;
