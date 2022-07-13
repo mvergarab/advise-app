@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import {Link} from 'react-router-dom';
+
 export const colors = {
    primary: "#fff",
    theme: "#BE1850",
@@ -36,4 +38,23 @@ export const StyledSubTitle = styled.p`
   color:${(props) => props.color ? props.color : colors.primary } ;
   padding: 5px;
   margin-bottom: 25px;
+`;
+
+export const StyledButton = styled(Link)`
+  padding: 10px;
+  width: 150px;
+  background-color: transparent;
+  font-size: 16px;
+  border: 3px solid ${colors.primary};
+  border-radius: 25px;
+  color: ${colors.primary};
+  text-decoration: none;
+  text-align: center;
+  transition: ease-in-out 0.3s;
+
+  &:hover{
+    background-color: ${colors.primary};
+    color: ${colors.theme};
+    cursor: pointer;
+  }
 `;
