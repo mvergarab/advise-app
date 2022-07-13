@@ -1,4 +1,4 @@
-import {StyledTitle, StyledSubTitle} from "./../components/Styles";
+import {StyledTitle, StyledSubTitle, StyledButton } from "./../components/Styles";
 
 const Home = () => {
   return (
@@ -12,6 +12,8 @@ const Home = () => {
        <StyledSubTitle size={27}>
          Value your time
        </StyledSubTitle>
+       <StyledButton to="/login">Login</StyledButton>
+       <StyledButton to="/signup">Signup</StyledButton>
     </div>
   );
 }
