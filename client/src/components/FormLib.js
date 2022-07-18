@@ -12,10 +12,10 @@ export const TextInput = ({...props}) => {
       <StyledLabel htmlFor = {props.name}>
         {props.label}
       </StyledLabel>
-      <StyledTextInput>
+      <StyledTextInput
         {...field}
         {...props}
-      </StyledTextInput>
+      />
     </div>
-  )
+  );
 }
