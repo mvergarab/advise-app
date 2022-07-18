@@ -1,7 +1,7 @@
 import {
   StyledTextInput, StyledFormArea,
   StyledFormButton, StyledLabel,
-  StyledTitle, colors
+  StyledTitle, colors, DoubleButton
 } from './../components/Styles';
 
 import { Formik, Form } from 'formik';
@@ -30,6 +30,9 @@ const Login = () => {
                   label = "Password"
                   placeholder = "**********"
                 />
+                <DoubleButton>
+                  <StyledFormButton type = "submit"> Login</StyledFormButton>
+                </DoubleButton>
             </Form>
           )}
         </Formik>

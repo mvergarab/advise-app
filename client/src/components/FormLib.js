@@ -1,7 +1,9 @@
 import { useField } from 'formik';
 import {
   StyledTextInput,
-  StyledLabel
+  StyledLabel,
+  DoubleButton,
+  StyledFormButton
 } from "./../components/Styles";
 
 export const TextInput = ({...props}) => {
