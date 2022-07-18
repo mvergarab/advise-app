@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "formik": "^2.2.9",
     "styled-components": "^5.3.5"
   }
 }
