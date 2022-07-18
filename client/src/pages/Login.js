@@ -1,17 +1,28 @@
-import { StyledTextInput, StyledFormArea, StyledFormButton, StyledLabel} from './../components/Styles';
-import { Formik, Form } from 'formik;'
+import {
+  StyledTextInput, StyledFormArea,
+  StyledFormButton, StyledLabel,
+  StyledTitle, colors
+} from './../components/Styles';
+
+import { Formik, Form } from 'formik';
 
 const Login = () => {
   return (
     <div>
-       <h2>Please Log In</h2>
-       <Formik>
+       <StyledFormArea>
+        <StyledTitle color = { colors.theme }
+        size = {30}>
+          Log in please
+        </StyledTitle>
+        <Formik>
           {() = > (
             <Form>
 
             </Form>
           )}
-       </Formik>
+        </Formik>
+       </StyledFormArea>
+
     </div>
   )
 };
