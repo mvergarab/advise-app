@@ -1,5 +1,6 @@
 import {StyledContainer} from './components/Styles';
 import  Home  from './pages/Home';
+import Login from './pages/Login'
 
 import {
   BrowserRouter as Router,
@@ -11,7 +12,7 @@ function App() {
   return (
     <Router>
       <StyledContainer>
-        <Home/>
+        <Login />
       </StyledContainer>
     </Router>
   );
