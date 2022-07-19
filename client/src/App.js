@@ -6,7 +6,7 @@ import Dashboard from './pages/Dashboard';
 
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route
 } from 'react-router-dom';
 
@@ -14,12 +14,20 @@ function App() {
   return (
     <Router>
       <StyledContainer>
-        <Switch>
+        <Routes>
           <Route path="/signup">
-            <Signup/>
+            <Signup />
           </Route>
-        </Switch>
-        <Dashboard/>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/dashboard">
+            <Dashboard />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Routes>
       </StyledContainer>
     </Router>
   );
