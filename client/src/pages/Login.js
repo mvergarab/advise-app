@@ -23,9 +23,13 @@ const Login = () => {
           }}
           validationSchema = {
             Yup.object({
-                email: Yup.string().email("Invalid email")
-                .required("Required"),
+                email: Yup.string()
+                  .email("Invalid email")
+                  .required("Required"),
                 password: Yup.string().min(8, "Password is too short")
+                  .min(8, "Password is too short")
+                  .max(30, "Password is too long")
+                  .required("Required")
             })
           }
           onSubmit={(values, {setSubmitting}) => {
