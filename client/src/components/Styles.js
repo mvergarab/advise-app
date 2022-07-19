@@ -117,3 +117,20 @@ export const StyledFormButton = styled.button`
       cursor: pointer;
     }
 `
+
+export const ErrorMsg = styled.div`
+  font-size: 11px;
+  color: ${colors.red};
+  margin-top: -5px;
+  margin-bottom: 10px;
+  text-align: left;
+`;
+
+
+export const ExtraText = styled.p`
+  font-size:${(props => props.size)}px;
+  text-align: center;
+  color: ${(props) => (props.color? props.color : colors.dark2)};
+  padding: 2px;
+  margin-top:  10px;
+`
