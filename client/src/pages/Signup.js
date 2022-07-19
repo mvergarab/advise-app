@@ -70,7 +70,7 @@ const Signup = () => {
                   placeholder = "**********"
                 />
                 <DoubleButton>
-                  <StyledFormButton type = "submit"> Login</StyledFormButton>
+                  <StyledFormButton type = "submit"> Signup</StyledFormButton>
                 </DoubleButton>
             </Form>
           )}
