@@ -6,6 +6,7 @@ import {
 
 import { Formik, Form } from 'formik';
 import { TextInput } from './../components/FormLib';
+import * as Yup from 'yup';
 
 const Login = () => {
   return (
@@ -15,7 +16,23 @@ const Login = () => {
         size = {30}>
           Log in please
         </StyledTitle>
-        <Formik>
+        <Formik
+          initialValues = {{
+            email: "",
+            password: ""
+          }}
+          validationSchema = {
+            Yup.object({
+                email: Yup.string().email("Invalid email")
+                .required("Required"),
+                password: Yup.string().min(8, "Password is too short")
+            })
+          }
+          onSubmit={(values, {setSubmitting}) => {
+            console.log(values);
+          }}
+        >
+
           {() => (
             <Form>
                 <TextInput
