@@ -3,7 +3,8 @@ import {
   StyledTextInput,
   StyledLabel,
   DoubleButton,
-  StyledFormButton
+  StyledFormButton,
+  ErrorMsg
 } from "./../components/Styles";
 
 export const TextInput = ({...props}) => {
@@ -18,6 +19,12 @@ export const TextInput = ({...props}) => {
         {...field}
         {...props}
       />
+
+      {meta.touched && meta.error ? (
+          <ErrorMsg>{meta.error}</ErrorMsg>
+      ): (
+        <ErrorMsg style={{visibility: "hidden"}}>.</ErrorMsg>
+      )}
     </div>
   );
 }
