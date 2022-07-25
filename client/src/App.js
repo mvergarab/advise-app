@@ -12,24 +12,16 @@ import {
 
 function App() {
   return (
-    <Router>
-      <StyledContainer>
-        <Routes>
-          <Route path="/signup">
-            <Signup />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/dashboard">
-            <Dashboard />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Routes>
-      </StyledContainer>
-    </Router>
+      <Router>
+        <StyledContainer>
+          <Routes>
+            <Route path="/login" element={<Login/>}/>
+            <Route path="/signup" element={<Signup/>}/>
+            <Route path="/home" element={<Home/>}/>
+            <Route path="/dashboard" element={<Dashboard/>}/>
+          </Routes>
+        </StyledContainer>
+      </Router>
   );
 }
 
