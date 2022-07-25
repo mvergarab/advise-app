@@ -4,80 +4,48 @@ import {
   StyledTitle, colors, DoubleButton
 } from './../components/Styles';
 
-import { Formik, Form } from 'formik';
 import { TextInput } from './../components/FormLib';
 import * as Yup from 'yup';
+import React, { useEffect, useState } from "react";
+import Axios from 'axios'
+
 
 const Signup = () => {
+
+  const [usernameReg, setUsernameReg] = useState('')
+  const [passwordReg, setPasswordReg] = useState('')
+
+  const register = () => {
+    Axios.post('https://localhost3001/signup', {
+      username: usernameReg,
+      password: passwordReg
+    }).then((response) => {
+      console.log(response);
+    })
+  };
+
   return (
-    <div>
-       <StyledFormArea>
-        <StyledTitle color = { colors.theme }
-        size = {30}>
-          Sign up
-        </StyledTitle>
-        <Formik
-          initialValues = {{
-            email: "",
-            password: "",
-            repeatPassword: "",
-            dateOfBirth: "",
-            name: ""
+    <>
+      <div className="registration">
+        <label>Email</label>
+        <input
+          type="text"
+          onChange = {(e) => {
+            setUsernameReg(e.target.value);
           }}
-          validationSchema = {
-            Yup.object({
-                email: Yup.string()
-                  .email("Invalid email")
-                  .required("Required"),
-                password: Yup.string().min(8, "Password is too short")
-                  .min(8, "Password is too short")
-                  .max(30, "Password is too long")
-                  .required("Required"),
-                name: Yup.string().required("Required"),
-                dateOfBirth: Yup.date().required("Required"),
-                repeatPassword: Yup.string().required("Required").oneOf([Yup.ref("password")], "Password must match")
-
-            })
-          }
-          onSubmit={(values, {setSubmitting}) => {
-            console.log(values);
+        />
+        <label>Password</label>
+        <input
+          type="text"
+          onChange = {(e) => {
+            setUsernameReg(e.target.value);
           }}
-        >
-
-          {() => (
-            <Form>
-                <TextInput
-                  name = "name"
-                  type = "text"
-                  label = "Your name"
-                  placeholder = "Oliver Saton"
-                />
-                <TextInput
-                  name = "dateOfBirth"
-                  type = "date"
-                  label = "birth date"
-                />
-                <TextInput
-                  name = "password"
-                  type = "password"
-                  label = "Password"
-                  placeholder = "**********"
-                />
-                <TextInput
-                  name = "repeatPassword"
-                  type = "password"
-                  label = "Repeat Password"
-                  placeholder = "**********"
-                />
-                <DoubleButton>
-                  <StyledFormButton type = "submit"> Signup</StyledFormButton>
-                </DoubleButton>
-            </Form>
-          )}
-        </Formik>
-       </StyledFormArea>
-
-    </div>
+        />
+        <label>Confirm Password</label>
+        <input type="text"/>
+        <button onClick = {register}> Register </button>
+      </div>
+    </>
   )
 };
 
