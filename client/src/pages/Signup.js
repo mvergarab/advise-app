@@ -12,12 +12,12 @@ import Axios from 'axios'
 
 const Signup = () => {
 
-  const [usernameReg, setUsernameReg] = useState('')
+  const [emailReg, setEmailReg] = useState('')
   const [passwordReg, setPasswordReg] = useState('')
 
   const register = () => {
-    Axios.post('https://localhost3001/signup', {
-      username: usernameReg,
+    Axios.post('http://localhost:3001/signup', {
+      email: emailReg,
       password: passwordReg
     }).then((response) => {
       console.log(response);
@@ -31,18 +31,16 @@ const Signup = () => {
         <input
           type="text"
           onChange = {(e) => {
-            setUsernameReg(e.target.value);
+            setEmailReg(e.target.value);
           }}
         />
         <label>Password</label>
         <input
           type="text"
           onChange = {(e) => {
-            setUsernameReg(e.target.value);
+            setPasswordReg(e.target.value);
           }}
         />
-        <label>Confirm Password</label>
-        <input type="text"/>
         <button onClick = {register}> Register </button>
       </div>
     </>

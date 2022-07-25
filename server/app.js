@@ -15,6 +15,19 @@ const db = mysql.createConnection({
   database: 'advise'
 });
 
+app.post('/signup', (req,res) => {
+
+  const email = req.body.email
+  const password = req.body.password
+
+  db.query(
+    "INSERT INTO users (email, password) VALUES(?,?)",
+    [email, password],
+    (err, result) => {
+       console.log(err);
+    }
+  );
+})
 
 app.listen(3001, () => {
   console.log("running server");
