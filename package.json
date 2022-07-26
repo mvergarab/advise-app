@@ -1,6 +1,10 @@
 {
   "dependencies": {
     "formik": "^2.2.9",
+    "react-redux": "^8.0.2",
+    "redux": "^4.2.0",
+    "redux-react-session": "^2.6.1",
+    "redux-thunk": "^2.4.1",
     "styled-components": "^5.3.5",
     "yup": "^0.28.5"
   }
